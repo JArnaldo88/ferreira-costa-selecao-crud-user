@@ -21,7 +21,7 @@ public class User {
 	@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	public Long id;
+	private Long id;
 	
 	
 	@Column(name = "name", nullable = false, unique = false, length = 50)
