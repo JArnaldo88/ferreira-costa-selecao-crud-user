@@ -3,6 +3,7 @@ package com.ferreira.costa.demo.entity;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -10,11 +11,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name= "user")
 public class User {
 	
@@ -25,6 +31,8 @@ public class User {
 	private Long id;
 	
 	
+	@CreatedBy
+	@LastModifiedBy
 	@Column(name = "name", nullable = false, unique = false, length = 50)
 	private String name;
 	
@@ -45,8 +53,10 @@ public class User {
 	@Column(name = "dataNascimento", nullable = false, unique = false)
 	private Date dataNascimento;
 	
+	
 	@Column(name = "login", nullable = false, unique = true)
 	private String login;
+	
 	
 	@Column(name = "senha", nullable = false, unique = false)
 	private String senha;
@@ -55,10 +65,12 @@ public class User {
 	private Status status;
 	
 	@CreatedDate 
+	@LastModifiedDate
 	@Column(name = "dataInclusao", nullable = false, updatable= false)
 	private Date dataInclusao;
 	
 	@CreatedDate 
+	@LastModifiedDate
 	@Column(name = "dataAlteracao", nullable = false, updatable = false)
 	private Date dataAlteracao;
 	

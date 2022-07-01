@@ -48,17 +48,17 @@ public class UserServiceTest {
 		// Arrange
 		User user = new User();
 		 user.setId(null);
-	        user.setName("Joao");
-	        user.setCpf("07466704001");
-	        user.setEmail("joao@gmail.com");
-	        user.setTelefone("98888-4040");
-	        user.setEmail("joao@gmail.com");
-	        user.setDataNascimento(new Date());
-	        user.setDataAlteracao(new Date());
-	        user.setDataInclusao(new Date());
-	        user.setLogin("joao-Depp");
-	        user.setStatus(Status.ATIVO);
-	        user.setSenha("202020");
+	     user.setName("Joao");
+	     user.setCpf("07466704001");
+	     user.setEmail("joao@gmail.com");
+	     user.setTelefone("98888-4040");
+	     user.setEmail("joao@gmail.com");
+	     user.setDataNascimento(new Date());
+	     user.setDataAlteracao(new Date());
+	     user.setDataInclusao(new Date());
+	     user.setLogin("joao-Depp");
+	     user.setStatus(Status.ATIVO);
+	     user.setSenha("202020");
 
 		// Act
 		user = userService.save(user);
