@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.data.annotation.CreatedDate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -53,12 +54,12 @@ public class User {
 	@Column(name = "Status", nullable = false)
 	private Status status;
 	
-	
-	@Column(name = "dataInclusao", nullable = false)
+	@CreatedDate 
+	@Column(name = "dataInclusao", nullable = false, updatable= false)
 	private Date dataInclusao;
 	
-	
-	@Column(name = "dataAlteracao", nullable = false)
+	@CreatedDate 
+	@Column(name = "dataAlteracao", nullable = false, updatable = false)
 	private Date dataAlteracao;
 	
 	

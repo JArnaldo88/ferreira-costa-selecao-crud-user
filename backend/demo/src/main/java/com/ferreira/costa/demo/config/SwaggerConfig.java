@@ -3,6 +3,7 @@ package com.ferreira.costa.demo.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.ferreira.costa.demo.Application;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -17,7 +18,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 	        return new Docket(DocumentationType.SWAGGER_2).select()
-	        		   .apis(RequestHandlerSelectors.basePackage(FerreiraCostaDemo.class.getPackage().getName()))
+	        		   .apis(RequestHandlerSelectors.basePackage(Application.class.getPackage().getName()))
 	                   .paths(PathSelectors.any())
 	                   .build()
 	                   .useDefaultResponseMessages(false)
