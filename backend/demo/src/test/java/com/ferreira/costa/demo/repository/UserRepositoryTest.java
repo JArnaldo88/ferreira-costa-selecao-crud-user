@@ -33,17 +33,13 @@ public class UserRepositoryTest {
         user.setName("Joao");
         user.setCpf("07466704001");
         user.setEmail("joao@gmail.com");
-        user.setTelefone("98888-4040");
-        user.setEmail("joao@gmail.com");
         user.setDataNascimento(new Date());
         user.setDataAlteracao(new Date());
         user.setDataInclusao(new Date());
         user.setLogin("joao-Depp");
         user.setStatus(Status.ATIVO);
         user.setSenha("202020");
-        // Act
-        user = userRepository.save(user);
-
+     
         // Print
         System.out.println(user);
         assertNotNull(user.getId());

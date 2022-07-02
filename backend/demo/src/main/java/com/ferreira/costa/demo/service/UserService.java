@@ -97,12 +97,18 @@ public class UserService {
 	}
 	
 	public void deleteById(Long id) {
-		if (userRepository.existsById(id)) {
-			userRepository.deleteById(id);
+		User user = userRepository.findById(id).orElse(null);
+		if (user != null) {
+			user.setStatus(Status.INATIVO);
+			saveInternal(user);
 		}
 	}
 		public void deleteAll() {
-			userRepository.deleteAllInBatch();
+		List<User> allUser = userRepository.findAll();	
+		for (User user : allUser) {
+			user.setStatus(Status.INATIVO);
+		}
+		userRepository.saveAll(allUser);
 		}
 		
 		public void teste() {
