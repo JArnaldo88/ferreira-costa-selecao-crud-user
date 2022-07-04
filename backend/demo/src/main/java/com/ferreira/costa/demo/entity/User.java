@@ -64,13 +64,11 @@ public class User {
 	@Column(name = "Status", nullable = false)
 	private Status status;
 	
-	@CreatedDate 
-	@LastModifiedDate
+	
 	@Column(name = "dataInclusao", nullable = false, updatable= false)
 	private Date dataInclusao;
 	
-	@CreatedDate 
-	@LastModifiedDate
+	
 	@Column(name = "dataAlteracao", nullable = false, updatable = false)
 	private Date dataAlteracao;
 	

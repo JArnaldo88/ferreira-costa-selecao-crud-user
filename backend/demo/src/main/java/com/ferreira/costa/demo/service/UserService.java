@@ -2,6 +2,7 @@ package com.ferreira.costa.demo.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -77,6 +78,10 @@ public class UserService {
 
 	public User save(User user) {
 		user.setId(null);
+		Date now = new Date();
+		user.setDataAlteracao(now);
+		user.setDataInclusao(now);
+		user.setStatus(Status.ATIVO);
 		return saveInternal(user);
 	}
 	
@@ -89,9 +94,16 @@ public class UserService {
 	
 	public User update(User user) {
 		Long id = user.getId();
-		if (id != null && userRepository.existsById(id)) {
+		Optional<User> userInDB = userRepository.findById(id);
+		if(userInDB.isPresent())
+		{
+			User u = userInDB.get();
+			user.setDataInclusao(u.getDataInclusao());
+			Date now = new Date();
+			user.setDataAlteracao(now);
 			return saveInternal(user);
-		} else {
+			
+		}else {
 			return null;
 		}
 	}
