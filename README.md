@@ -1,7 +1,6 @@
 # User CRUD
 User management system.
 
-### Scope evaluation
 
 ### Entity–relationship model
 ![image-1.png](https://github.com/JArnaldo88/ferreira-costa-selecao-crud-user/blob/main/backend/documentation/image-1.png)
