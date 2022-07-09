@@ -35,7 +35,7 @@ public class UserController {
 			this.userService = userService;		
 	}
 	
-		@ApiOperation(value = "Find all allocations")
+		@ApiOperation(value = "Find all user")
 		@ApiResponses({ @ApiResponse(code = 200, message = "OK") })
 		@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 		@ResponseStatus(HttpStatus.OK)

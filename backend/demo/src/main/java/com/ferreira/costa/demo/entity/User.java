@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-@Table(name= "user")
+@Table(name= "\"usuario\"")
 public class User {
 	
 	
@@ -31,8 +31,7 @@ public class User {
 	private Long id;
 	
 	
-	@CreatedBy
-	@LastModifiedBy
+
 	@Column(name = "name", nullable = false, unique = false, length = 50)
 	private String name;
 	
@@ -64,11 +63,11 @@ public class User {
 	@Column(name = "Status", nullable = false)
 	private Status status;
 	
-	
+	//@CreatedBy//
 	@Column(name = "dataInclusao", nullable = false, updatable= false)
 	private Date dataInclusao;
 	
-	
+	//@LastModifiedBy//
 	@Column(name = "dataAlteracao", nullable = false, updatable = false)
 	private Date dataAlteracao;
 	
